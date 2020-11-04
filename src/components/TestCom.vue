@@ -7,7 +7,10 @@ export default defineComponent({
     ComponentB: defineAsyncComponent(() => import('@/components/ComponentB.vue')),
   },
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      default: '',
+    },
   },
   setup(props) {
     const obj = reactive({
@@ -31,7 +34,7 @@ export default defineComponent({
         {props.msg}
         <div>{obj.a}</div>
         <button onClick={handleClick}>test</button>
-        <component-b v-slots={slots} onCustom-event={handle}></component-b>
+        <component-b v-slots={slots} onCustomEvent={handle}></component-b>
       </div>
     );
   },

@@ -101,7 +101,10 @@ export default defineComponent({
     TestCom,
   },
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      default: '',
+    },
   },
   setup(props) {
     onMounted(() => {
